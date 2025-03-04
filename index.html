@@ -27,6 +27,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .logo-container {
@@ -100,7 +101,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-        }
+    }
 
         .hero-overlay {
             position: absolute;
@@ -118,6 +119,9 @@
             max-width: 800px; /* Wider for better text alignment */
             padding: 20px;
             color: #fff;
+            background: rgba(255, 255, 255, 0.15); /* Light transparent background */
+            backdrop-filter: blur(5px); /* Blur effect */
+            border-radius: 10px;
         }
 
         .hero-content h1 {
@@ -132,6 +136,22 @@
             font-size: 1.2em; /* Slightly reduced size for balance */
             margin-bottom: 20px;
         }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation to the hero content */
+.hero-content {
+    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0; /* Ensures the element is initially hidden */
+}
 
         .cta-btn {
             background-color: #e67e22;
@@ -146,6 +166,21 @@
         .cta-btn:hover {
             background-color: #d35400;
         }
+
+.preorder-btn {
+    background-color: #f1c40f; /* Yellow */
+    color: #2c3e50; /* Dark text for contrast */
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.preorder-btn:hover {
+    background-color: #d4ac0d; /* Slightly darker yellow on hover */
+    color: #fff; /* White text for better readability */
+}
+
 
         /* Content Section Styles */
         .content-section {
@@ -230,6 +265,22 @@
             margin-left: auto;
             margin-right: auto;
 	}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
         /* Footer Styles */
         footer {
@@ -380,10 +431,13 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#waste">Waste</a></li>
+                <li><a href="#PETase">PETase</a></li>
                 <li><a href="#product">Product</a></li>
-                <li><a href="#kickstarter">Kickstarter</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#Pre-order Now" class="preorder-btn">Pre-order Now</a></li>
+                <li><a href="mailto:hello@plastizyme.com?subject=Inquiry&body=Hello,%20I%20would%20like%20to%20learn%20more%20about%20Plastizyme.">
+    Contact
+</a>
+
             </ul>
         </nav>
     </header>
@@ -402,25 +456,71 @@
     <!-- Content Sections -->
     <section id="about" class="content-section">
         <h2>About</h2>
-        <p>At Plastizyme, we're driven by a single vision: to combat plastic pollution at its source using cutting-edge biotechnology. As pioneers in sustainable plastic degradation, our mission is to empower individuals and communities to reduce plastic waste in a way that is effective and accessible. We believe that every small action contributes to a bigger impact, and with Plastizyme, we can collectively change the future of our planet for the better. Join us in revolutionizing how we manage plastic waste, and together, let’s make a cleaner, greener world.</p>
-    </section>
-    <section id="waste" class="content-section">
-        <h2>Waste</h2>
-        <img src="waste-image.jpg" alt="Plastic Waste Image">
-        <p>Plastic waste has become one of the most pressing environmental issues of our time. Every year, millions of tons of plastic enter landfills and oceans, taking hundreds of years to decompose. Traditional methods of plastic recycling have proven insufficient, with only a small fraction of plastics ever being reused. As plastic accumulates, it causes harm to wildlife, ecosystems, and even human health. The crisis is urgent, and new solutions are needed to address this global challenge. Plastizyme is our answer to reducing the overwhelming burden of plastic waste on our planet.</p>
-    </section>
+        
+  <p> Plastizyme was founded at UNC Chapel Hill to push the boundaries of science in tackling plastic pollution. Recognizing that PETase enzymes have advanced to the point of real-world application, we set out to bring enzyme-driven plastic degradation into homes for the first time. </p> 
+
+<strong> The Problem </strong> 
+<p> Plastic waste takes centuries to break down, overwhelming landfills and oceans. Current recycling efforts fail to keep up, leaving the world searching for a better solution. </p> 
+
+<strong> The Opportunity </strong> 
+<p> Breakthroughs in PETase enzymes offer a game-changing way to degrade plastic efficiently—breaking it down at the molecular level instead of relying on industrial recycling. </p> 
+
+   
+ </section>
+    <section id="PETase" class="content-section">
+        <h2>PETase</h2>
+  <strong>What is PETase?</strong>
+<p>
+PETase is a naturally occurring enzyme that <strong>breaks down PET plastic</strong> into its base components, allowing for true biodegradation rather than accumulation in landfills.
+</p>
+<strong>Science in Action</strong>
+<p>Watch PETase at work: The video below demonstrates <strong>PETase PHL7</strong> breaking down clamshell PET packaging within <strong>24 hours</strong>.
+</p>    
+<div class="video-container">
+        <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/nWfBvRm4640" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+</div>
+<p><strong>Note:</strong> This video is for <strong>educational purposes only</strong>. Plastizyme is <strong>not affiliated</strong> with any entity shown in the video.</p> 
+   
+</section>
     <section id="product" class="content-section">
         <h2>Product</h2>
         <div class="side-by-side">
             <img src="product-image-1.JPG" alt="Plastizyme Product Image">
             
         </div>
-        <p>Plastizyme offers a breakthrough approach to plastic degradation. Our enzyme-based product accelerates the decomposition of PET plastics, breaking them down into harmless components in just days rather than centuries. Unlike traditional recycling, which requires energy-intensive processes, Plastizyme works efficiently and sustainably at a biological level, harnessing the power of nature to tackle plastic waste. Our solution is designed for everyday use, bringing the power of advanced biotechnology into homes, communities, and businesses to make plastic degradation simple and effective.</p>
-    </section>
-    <section id="kickstarter" class="content-section">
-        <h2>Kickstarter</h2>
-        <p>We are launching Plastizyme through Kickstarter to make this revolutionary product a reality. Your support will help us fund the production and distribution of our enzyme kits, enabling us to bring this innovative solution to more people. By backing our campaign, you’re not just supporting a product—you’re joining a movement to reduce plastic waste and protect the environment for future generations. Together, we can turn the tide on plastic pollution. Help us by becoming a part of the Plastizyme community and supporting our vision of a cleaner planet.</p>
-        <a href="https://www.kickstarter.com/projects/plastizyme/help-us-build-a-diy-plastic-degrading-enzyme-kit-prototype" class="cta-btn" target="_blank">Support Us</a>
+ <strong>An Enzyme-Powered Solution to Plastic Waste</strong>
+<p>The Plastizyme kit lets you experience the power of <strong>PHL7 PETase</strong>, applying it directly to <strong>amorphous PET plastic</strong> to observe real degradation at home.
+</p>
+<strong>Why This Matters</strong>
+<p>Unlike traditional recycling, <strong>which requires high energy and specialized facilities</strong>, this enzyme-driven process <strong>breaks down plastic directly</strong>, offering an alternative path toward eliminating waste.
+</p>
+<strong>How It Works</strong>
+<p> 1️⃣ <strong>Mix the enzyme</strong> with PET plastic. </p>
+<p> 2️⃣ <strong>Observe the breakdown</strong> over time. </p>
+<p> 3️⃣ <strong>Contribute to eliminating plastic waste!</strong> </p>
+
+
+<p>This is a <strong>beta test run</strong>, not a fully commercialized product. You are joining the <strong>pioneering phase</strong> to help bring this technology to market.
+   </p>      </section>
+    <section id="Pre-order Now" class="content-section">
+        <h2>Pre-order Now</h2>
+<strong>Become a Beta Tester—Shape the Future of Plastic Degradation</strong>
+<p>This exclusive beta test is designed for early adopters who want to invest in advancing enzyme-driven plastic breakdown.
+</p>
+<strong>Why Join?</strong>
+<p>✔ <strong>Be part of the first real-world trial</strong> for at-home plastic degradation.</p>
+<p>✔ <strong>Provide usability feedback</strong> to refine and improve the product.</p>
+<p>✔ <strong>Engage directly with the founder</strong> and contribute to a cutting-edge sustainability effort.</p>
+
+<p>💰 <strong>Beta test kits available for $200–$500</strong></p>
+<p>🚀 <strong>Limited spots available—secure yours now!</strong></p>
+<a href="https://www.paypal.com/ncp/payment/X5J83MZEHX5TY" class="cta-btn" target="_blank">Checkout</a>
         <div class="kickstarter-logo">
             <img src="kickstarter-logo.png" alt="Kickstarter Logo" style="max-width: 350px; margin-top: 35px;">
         </div>
@@ -432,57 +532,73 @@
         <div class="footer-nav">
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#waste">Waste</a></li>
+                <li><a href="#PETase">PETase</a></li>
                 <li><a href="#product">Product</a></li>
-                <li><a href="#kickstarter">Kickstarter</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#Pre-order Now">Pre-order Now</a></li>
+                <li><a href="mailto:hello@plastizyme.com?subject=Inquiry&body=Hello,%20I%20would%20like%20to%20learn%20more%20about%20Plastizyme.">
+    Contact
+</a>
+
             </ul>
         </div>
-        <div class="social-media">
-            <a href="#" aria-label="Facebook">Facebook</a>
-            <a href="#" aria-label="Twitter">Twitter</a>
-            <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        </div>
+        
         <p>&copy; 2024 Plastizyme. All rights reserved.</p>
     </footer>
 
-    <!-- Popup Form -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close" id="popup-close">&times;</span>
-            <h2>Learn More</h2>
-            <p>Enter your contact information to receive more details about Plastizyme.</p>
-            <input type="text" id="name" placeholder="Your Name">
-            <input type="email" id="email" placeholder="Your Email">
-            <button id="submit-btn">Submit</button>
-        </div>
+   <!-- Popup Form -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close" id="popup-close">&times;</span>
+        <h2>Learn More</h2>
+        <p>Enter your contact information to receive more details about Plastizyme.</p>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <button id="submit-btn">Submit</button>
     </div>
+</div>
 
-    <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            var nav = document.querySelector('.main-nav');
-            nav.classList.toggle('active');
-        });
+<script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        var nav = document.querySelector('.main-nav');
+        nav.classList.toggle('active');
+    });
 
-        document.getElementById('learn-more-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('popup').style.display = 'flex';
-        });
+    document.getElementById('learn-more-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('popup').style.display = 'flex';
+    });
 
-        document.getElementById('popup-close').addEventListener('click', function() {
-            document.getElementById('popup').style.display = 'none';
-        });
+    document.getElementById('popup-close').addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'none';
+    });
 
-        document.getElementById('submit-btn').addEventListener('click', function() {
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            if (name && email) {
-                alert('Thank you for your interest, ' + name + '!');
+    document.getElementById('submit-btn').addEventListener('click', function() {
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+
+        if (name && email) {
+            // Google Form Submission (Replace YOUR_FORM_ID and entry.xxxxxx with actual values)
+            var googleFormURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeDiuTbWxq5goPf8VU1zaawrk_Nq3hOHC9uUgYnvjUZYf0puQ/formResponse";
+            var formData = new FormData();
+            formData.append("entry.1625098546", name); // Replace with actual entry ID for "name"
+            formData.append("entry.694019218", email); // Replace with actual entry ID for "email"
+
+            // Submit to Google Form silently
+            fetch(googleFormURL, {
+                method: "POST",
+                body: formData,
+                mode: "no-cors"
+            }).then(() => {
+                alert('Thank you for your interest, ' + name + '! We will be in touch soon.');
                 document.getElementById('popup').style.display = 'none';
-            } else {
-                alert('Please fill out both fields.');
-            }
-        });
-    </script>
+                document.getElementById('name').value = ''; // Clear inputs
+                document.getElementById('email').value = '';
+            }).catch(err => console.error("Submission Error:", err));
+        } else {
+            alert('Please fill out both fields.');
+        }
+    });
+</script>
+
 </body>
 </html>
